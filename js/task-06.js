@@ -1,14 +1,13 @@
 const textInput = document.querySelector("#validation-input");
 
 textInput.addEventListener("blur", () => {
-  // ЧОМУ ЦЕЙ КОД НЕ СПРАЦЬОВУЄ?
-  //   if (textInput.value === "") {
-  //     textInput.style.borderColor = "#bdbdbd";
-  //   }
-  if (textInput.value == textInput.dataset.length) {
-    textInput.style.borderColor.classList.add = "valid";
+  if (Number(textInput.value.length) === Number(textInput.dataset.length)) {
+    textInput.classList.remove("invalid");
+    textInput.classList.add("valid");
   } else {
-    textInput.style.borderColor.classList.add = "invalid";
+    textInput.classList.remove("valid");
+    textInput.classList.add("invalid");
   }
 });
-console.log(textInput.dataset.length);
+console.log(Number(textInput.value.length));
+console.log(Number(textInput.dataset.length));
